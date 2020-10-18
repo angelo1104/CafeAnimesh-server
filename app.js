@@ -3,7 +3,6 @@ import cors from 'cors';
 import Stripe from 'stripe';
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
-import serverless from 'serverless-http';
 
 dotenv.config()
 
@@ -37,8 +36,3 @@ app.post('/api/v1/payments/create',async (req,res)=>{
 app.listen(port,()=>{
     console.log(`Server listening on port ${port}`)
 })
-
-const handler = serverless(app)
-
-export {handler}
-
