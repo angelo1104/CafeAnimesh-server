@@ -1,12 +1,15 @@
-import express from 'express';
-import cors from 'cors';
-import Stripe from 'stripe';
-import bodyParser from 'body-parser'
-import dotenv from 'dotenv'
+// import express from 'express';
+// import cors from 'cors';
+// import Stripe from 'stripe';
+// import bodyParser from 'body-parser'
+// import dotenv from 'dotenv'
 
+const express = require('express')
+const cors = require('cors')
+const stripe = require('stripe')(process.env.SECRET_KEY)
+const dotenv = require('dotenv')
+const bodyParser = require('body-parser')
 dotenv.config()
-
-const stripe = new Stripe(process.env.SECRET_KEY)
 
 const port = process.env.PORT || 9000
 

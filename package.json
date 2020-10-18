@@ -1,7 +1,6 @@
 {
   "name": "cafe-animesh-server",
   "version": "1.0.0",
-  "type": "module",
   "main": "app.js",
   "author": "Angelo",
   "license": "MIT",
