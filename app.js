@@ -1,10 +1,6 @@
-// import express from 'express';
-// import cors from 'cors';
-// import Stripe from 'stripe';
-// import bodyParser from 'body-parser'
-// import dotenv from 'dotenv'
 const dotenv = require('dotenv')
 dotenv.config()
+const https = require('https')
 const express = require('express')
 const cors = require('cors')
 const stripe = require('stripe')(process.env.SECRET_KEY)
@@ -35,6 +31,12 @@ app.post('/api/v1/payments/create',async (req,res)=>{
         })
 })
 
-app.listen(port,()=>{
-    console.log(`Server listening on port ${port}`)
+// app.listen(port,()=>{
+//     console.log(`Server listening on port ${port}`)
+// })
+
+const httpsServer = https.createServer(app)
+
+httpsServer.listen(9000,()=>{
+    console.log('server started on port 9000')
 })
