@@ -71,7 +71,7 @@ app.get('/feedback/weekly',(req, res) => {
 app.get('/feedback/monthly',(req, res) => {
     const data = []
 
-    database.collection('weekly review')
+    database.collection('monthly review')
         .get()
         .then(snapshot=>{
             snapshot.forEach(doc=>{
