@@ -6,7 +6,6 @@ const stripe = require('stripe')(process.env.SECRET_KEY)
 const bodyParser = require('body-parser')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const database = require(__dirname+'/firebase.js').database
-const storage = require(__dirname+'/firebase.js').storage
 const fs = require('fs')
 
 const port = process.env.PORT || 9000
@@ -34,7 +33,7 @@ app.post('/api/v1/payments/create',async (req,res)=>{
         })
 })
 
-app.get('/feedback/weekly',(req, res) => {
+app.get('/api/v1/feedback/weekly',(req, res) => {
     const data = []
 
     database.collection('weekly review')
@@ -68,7 +67,7 @@ app.get('/feedback/weekly',(req, res) => {
         })
 })
 
-app.get('/feedback/monthly',(req, res) => {
+app.get('/api/v1/feedback/monthly',(req, res) => {
     const data = []
 
     database.collection('monthly review')
